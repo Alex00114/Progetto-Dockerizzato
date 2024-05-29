@@ -4,10 +4,6 @@ services:
       build:
         dockerfile: Dockerfile
         context: ./client
-      environment:            #setta alcune variabili d'ambiente
-      - MONGO_INITDB_DATABASE=animal_db
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=pass
       volumes:
         #In questo modo dico a docker di usare la cartella del container /app/node_modules come volume
         #La cartella locale node_modules (se non ha modifiche) non verrà più copiata perchè il volume esiste già
@@ -24,6 +20,10 @@ services:
         context: ./server
       volumes:
         - ./server:/app
+      environment:            #setta alcune variabili d'ambiente
+      - MONGO_INITDB_DATABASE=animal_db
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=pass
       ports:
         - 5000:5000
   mongo-server:
