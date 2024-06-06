@@ -4,7 +4,7 @@
 
 export const environment = {
     production: false,
-    baseUrlServer: 'https://5000-alex00114-progettodocke-wvmtzk5hjqs.ws-eu114.gitpod.io/'
+    baseUrlServer: '/api/'
   };
   
   /*
